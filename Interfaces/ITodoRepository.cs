@@ -27,7 +27,7 @@ namespace Interfaces
         /// </ summary >
         /// <returns > True if success , false otherwise </ returns >
         bool Remove(Guid todoId);
-        /*
+        
         /// <summary >
         /// Updates given TodoItem in database .
         /// If TodoItem does not exist , method will add one .
@@ -58,7 +58,7 @@ namespace Interfaces
         /// <summary >
         /// Gets all TodoItem objects in database that apply to the filter
         /// </ summary >
-        List<TodoItem> GetFiltered(Func<TodoItem, bool> filterFunction); */
+        List<TodoItem> GetFiltered(Func<TodoItem, bool> filterFunction);
     }
 }
 

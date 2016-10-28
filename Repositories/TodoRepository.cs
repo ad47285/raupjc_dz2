@@ -62,10 +62,67 @@ namespace Repositories
             }
             else
             {
-                IGenericList<TodoItem> inMemoryTodoDatabase = new IGenericList<TodoItem>;
-                inMemoryTodoDatabase = _inMemoryTodoDatabase.Where(r => r.Id != todoId).ToList();
+                return _inMemoryTodoDatabase.Remove(Get(todoId));
+            }
+        }
+
+        public void Update(TodoItem todoItem)
+        {
+            var item = Get(todoItem.Id);
+
+            if (item == null)
+            {
+                _inMemoryTodoDatabase.Add(todoItem);
+            }
+            else
+            {
+                item.Text = todoItem.Text;
+                item.IsCompleted = todoItem.IsCompleted;
+                item.DateCompleted = todoItem.DateCompleted;
+                item.DateCreated = todoItem.DateCreated;
+            }
+        }
+
+        public bool MarkAsCompleted(Guid todoId)
+        {
+            var item = Get(todoId);
+
+            if (item == null)
+            {
+                return false;
+            }
+            else
+            {
+                item.MarkAsCompleted();
                 return true;
             }
+        }
+
+        public List<TodoItem> GetAll()
+        {
+            return _inMemoryTodoDatabase.Select(i => i).OrderByDescending(r => r.DateCreated) as List<TodoItem>;
+        }
+
+        public List<TodoItem> GetActive()
+        {
+            return _inMemoryTodoDatabase.Where(r => r.IsCompleted == false) as List<TodoItem>;
+        }
+
+        public List<TodoItem> GetCompleted()
+        {
+            return _inMemoryTodoDatabase.Where(r => r.IsCompleted == true) as List<TodoItem>;
+        }
+
+        public List<TodoItem> GetFiltered(Func<TodoItem, bool> filterFunction)
+        {
+            //List<TodoItem> res = new List<TodoItem>;
+            //foreach (TodoItem r in _inMemoryTodoDatabase)
+            //{
+            //    if (filterFunction(r))
+            //        res.Add(r);
+            //}
+            //return res;
+            return _inMemoryTodoDatabase.Where(r => filterFunction(r) == true) as List<TodoItem>;
         }
     }
 }
