@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenList", "GenList\GenList.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zad1Tests", "zad1Tests\zad1Tests.csproj", "{0129684D-F15B-4487-B62B-9B26CF580E6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zad2", "zad2\zad2.csproj", "{4E2936F1-1653-4D5C-BD33-AAAA65FFFE47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0129684D-F15B-4487-B62B-9B26CF580E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0129684D-F15B-4487-B62B-9B26CF580E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0129684D-F15B-4487-B62B-9B26CF580E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2936F1-1653-4D5C-BD33-AAAA65FFFE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2936F1-1653-4D5C-BD33-AAAA65FFFE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2936F1-1653-4D5C-BD33-AAAA65FFFE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2936F1-1653-4D5C-BD33-AAAA65FFFE47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

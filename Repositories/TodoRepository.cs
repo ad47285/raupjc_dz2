@@ -38,8 +38,7 @@ namespace Repositories
 
         public TodoItem Get(Guid todoId)
         {
-            TodoItem res = _inMemoryTodoDatabase.Where(r => r.Id == todoId).FirstOrDefault();
-            return res;
+            return _inMemoryTodoDatabase.Where(r => r.Id == todoId).FirstOrDefault();
         }
 
         public void Add(TodoItem todoItem)
@@ -100,17 +99,17 @@ namespace Repositories
 
         public List<TodoItem> GetAll()
         {
-            return _inMemoryTodoDatabase.Select(i => i).OrderByDescending(r => r.DateCreated) as List<TodoItem>;
+            return _inMemoryTodoDatabase.OrderByDescending(r => r.DateCreated).ToList();
         }
 
         public List<TodoItem> GetActive()
         {
-            return _inMemoryTodoDatabase.Where(r => r.IsCompleted == false) as List<TodoItem>;
+            return _inMemoryTodoDatabase.Where(r => r.IsCompleted == false).ToList();
         }
 
         public List<TodoItem> GetCompleted()
         {
-            return _inMemoryTodoDatabase.Where(r => r.IsCompleted == true) as List<TodoItem>;
+            return _inMemoryTodoDatabase.Where(r => r.IsCompleted == true).ToList();
         }
 
         public List<TodoItem> GetFiltered(Func<TodoItem, bool> filterFunction)
@@ -122,7 +121,7 @@ namespace Repositories
             //        res.Add(r);
             //}
             //return res;
-            return _inMemoryTodoDatabase.Where(r => filterFunction(r) == true) as List<TodoItem>;
+            return _inMemoryTodoDatabase.Where(r => filterFunction(r) == true).ToList();
         }
     }
 }

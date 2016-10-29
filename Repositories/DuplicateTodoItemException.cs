@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Repositories
 {
     [Serializable]
-    internal class DuplicateTodoItemException : Exception
+    public class DuplicateTodoItemException : Exception
     {
         public DuplicateTodoItemException()
         {

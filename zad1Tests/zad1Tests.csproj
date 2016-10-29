@@ -55,6 +55,18 @@
     <Compile Include="TodoRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GenList\GenList.csproj">
+      <Project>{9768611e-0493-4dec-bb1e-b1bea81dce53}</Project>
+      <Name>GenList</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{18322E78-BF25-43AD-883A-E88E4DE486D2}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{8e252190-5ae2-4955-9334-05e97f5d98a0}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repositories\zad1.csproj">
       <Project>{D919EBBA-4622-42E1-8A64-864D58CC1D97}</Project>
       <Name>zad1</Name>
