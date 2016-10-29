@@ -12,10 +12,10 @@ namespace zad3
         {
             int[] integers = new[] { 1, 2, 2, 2, 3, 3, 4, 5 };
 
-            string[] strings = (from item in integers
-                                group item by item into itemGroup
-                                select String.Format("Broj {0} ponavlja se {1} puta.", itemGroup.Key, itemGroup.Count()))
-                                .ToArray();
+            string[] strings = integers.GroupBy(x => x)
+                .OrderBy(group => group.Key)
+                .Select(group => string.Format("Broj {0} ponavlja se {1} puta.", group.Key, group.Count()))
+                .ToArray();
 
             //foreach (var item in strings)
             //{
