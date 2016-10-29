@@ -114,13 +114,6 @@ namespace Repositories
 
         public List<TodoItem> GetFiltered(Func<TodoItem, bool> filterFunction)
         {
-            //List<TodoItem> res = new List<TodoItem>;
-            //foreach (TodoItem r in _inMemoryTodoDatabase)
-            //{
-            //    if (filterFunction(r))
-            //        res.Add(r);
-            //}
-            //return res;
             return _inMemoryTodoDatabase.Where(r => filterFunction(r) == true).ToList();
         }
     }
